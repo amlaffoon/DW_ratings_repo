@@ -1,15 +1,21 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const sqlite = require('better-sqlite3');
+const path = require('path');
+const Database = require('better-sqlite3');
+const initializeDatabase = require('./db/initializeDatabase');
+
+initializeDatabase();
 
 app.use(express.static("public"))
 
+//function to run seed scripts if db doesn't exist - or put in a separate module and reference here
+
 app.get('/episodes', (req, res) => {
-    let db = sqlite("who_reviews.db");
+    let db = new Database("DWR_db.db");
     const stmt = db.prepare('SELECT * FROM Episodes');
     const episodeData = stmt.all();
-    res.send(episodeData);
+    res.send(JSON.stringify(episodeData));
 })
 
 app.post('/episodes', (req, res) => {
@@ -20,7 +26,5 @@ app.post('/episodes', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Listening on port ${port}`)
 })
-
-export default episodeData;

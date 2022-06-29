@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "better-sqlite3": "^7.5.3",
     "express": "^4.18.1"
   },
   "scripts": {
@@ -8,7 +9,6 @@
   "name": "dwr",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
   "author": "",
   "license": "ISC",
   "description": ""

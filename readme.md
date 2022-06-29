@@ -4,7 +4,7 @@ Also: sort by popularity?
 
 ////
 
-1. display the table in the html
+1. display the table in the html X
 2. open a modal when clicking on each entry in the table
 3. users can input text/data in the modal
 4. add the input to the ratings table

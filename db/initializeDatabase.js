@@ -5,7 +5,7 @@ function initializeDatabase() {
     console.log("db init")
     try {
         let options = { fileMustExist: true };
-        let db = new Database("DWR_db.db", options);
+        let db = new Database("DWR_db2.db", options);
     } catch (error) {
         console.log(error);
         console.log("Error succesfully caught");

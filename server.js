@@ -12,7 +12,7 @@ app.use(express.static("public"))
 //function to run seed scripts if db doesn't exist - or put in a separate module and reference here
 
 app.get('/episodes', (req, res) => {
-    let db = new Database("DWR_db.db");
+    let db = new Database("DWR_db2.db");
     const stmt = db.prepare('SELECT * FROM Episodes');
     const episodeData = stmt.all();
     res.send(JSON.stringify(episodeData));

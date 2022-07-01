@@ -3,12 +3,11 @@ const episodes = require('./seed_data')
 
 function initializeDatabase() {
     console.log("db init")
+    //if database does not exist on local machine, creates a new database, creates tables, and populates tables with data from seed_data file
     try {
         let options = { fileMustExist: true };
-        let db = new Database("DWR_db2.db", options);
+        let db = new Database("DWR_db.db", options);
     } catch (error) {
-        console.log(error);
-        console.log("Error succesfully caught");
         let db = new Database("DWR_db.db");
         const createEpisodesTable = db.prepare(`CREATE TABLE "Episodes" (
             "Title"	TEXT,
@@ -28,14 +27,11 @@ function initializeDatabase() {
         );`);
         createRatingsTable.run();
 
-        const insertEpisode = db.prepare(`INSERT INTO Episodes (Title, Series, Doctor) VALUES (?, ?, ?)`);
 
-        // const insert = db.prepare('INSERT INTO cats (name, age) VALUES (@name, @age)');
-        // const insertMany = db.transaction((cats) => {
-        //     for (const cat of cats) {
-        //         insert.run(cat);
-        //     }
-        // });
+        for (let episode of episodes) {
+            const insertEpisode = db.prepare(`INSERT INTO Episodes (Title, Series, Doctor) VALUES (@Title, @Series, @Doctor)`);
+            insertEpisode.run(episode);
+        }
 
     }
 }

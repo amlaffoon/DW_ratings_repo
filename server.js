@@ -4,6 +4,7 @@ const port = 3000
 const path = require('path');
 const Database = require('better-sqlite3');
 const initializeDatabase = require('./db/initializeDatabase');
+const config = require('./config');
 
 
 initializeDatabase();
@@ -14,14 +15,14 @@ app.use(express.json());
 
 
 app.get('/episodes', (req, res) => {
-    let db = new Database("DWR_db2.db");
+    let db = new Database(config.databaseName);
     const stmt = db.prepare('SELECT * FROM Episodes');
     const episodeData = stmt.all();
     res.send(JSON.stringify(episodeData));
 })
 
 app.post('/ratings', (req, res) => {
-    let db = new Database("DWR_db2.db");
+    let db = new Database(config.databaseName);
     //variables to represent the values for sql insert
     if (req.body.rating < 1 || req.body.rating > 10) {
         res.send("Rating must be between 1 and 10");
@@ -36,7 +37,7 @@ app.post('/ratings', (req, res) => {
 })
 
 app.get('/ratings', (req, res) => {
-    let db = new Database("DWR_db2.db");
+    let db = new Database(config.databaseName);
     const stmt = db.prepare('SELECT * FROM Ratings');
     const ratingsData = stmt.all();
     res.send(JSON.stringify(ratingsData));

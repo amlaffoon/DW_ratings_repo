@@ -1,4 +1,4 @@
-Displays a table/database of Doctor Who episodes since 2005, with title and season. Users can select individual episodes to submit a rating (out of 10) and optional comment. Agreggate ratings are displayed. Users can also utilize the search bar to filter the table if they are looking for a specific episode. 
+Displays a table/database of Doctor Who episodes since 2005, with title and season. Users can select individual episodes to submit a rating (out of 10) and optional comment. Agreggate ratings are then displayed. Users can also utilize the search bar to filter the table if they are looking for a specific episode. 
 
 Also: sort by popularity?
 

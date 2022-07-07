@@ -1,14 +1,15 @@
 const Database = require('better-sqlite3');
 const episodes = require('./seed_data')
+const config = require('../config');
 
 function initializeDatabase() {
     console.log("db init")
     //if database does not exist on local machine, creates a new database, creates tables, and populates tables with data from seed_data file
     try {
         let options = { fileMustExist: true };
-        let db = new Database("DWR_db.db", options);
+        let db = new Database(config.databaseName, options);
     } catch (error) {
-        let db = new Database("DWR_db.db");
+        let db = new Database(config.databaseName);
         const createEpisodesTable = db.prepare(`CREATE TABLE "Episodes" (
             "Title"	TEXT,
             "Series"	INTEGER,

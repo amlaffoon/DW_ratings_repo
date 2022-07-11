@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/favicon_io/android-chrome-512x512.png">
+    <link rel="icon" type="image/x-icon" href="/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/x-icon" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>DW</title>
+</head>
+
+<body>
+    <main class="container">
+        <h1 class="title">The Matrix</h1>
+
+        <div class="field has-addons">
+            <div class="control">
+                <input class="input" type="search" id="search-content" name="q" placeholder="Search"
+                    oninput="searchPage(this)">
+            </div>
+            <div class="control">
+                <a class="button is-info">
+                    Search
+                </a>
+            </div>
+        </div>
+
+        <table class="table" id="episodes">
+
+        </table>
+
+    </main>
+    <!-- <button onclick="toggleModal()">Toggle</button> -->
+    <div id="modal" class="modal">
+        <!--function to switch on/off is-active class-->
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p id="modal-title" class="modal-card-title">Modal title</p>
+                <button onclick="toggleModal()" class="delete" aria-label="close"></button>
+            </header>
+
+            <section class="modal-card-body">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-link" id="comment" placeholder="Comment" type="text">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-link" id="rating" type="number" placeholder="Rating" min="1" max="10">
+                    </div>
+                </div>
+
+                <input id="episode-id" type="hidden">
+
+                <!-- Content ... -->
+            </section>
+            <footer class="modal-card-foot">
+                <button onclick="submitForm()" class="button is-success">Save changes</button>
+                <button onclick="toggleModal()" class="button">Cancel</button>
+            </footer>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+<footer class="footer">
+    Anna Marie Laffoon 1994
+</footer>
+
+</html>

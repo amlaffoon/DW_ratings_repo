@@ -16,7 +16,12 @@ app.use(express.json());
 
 app.get('/episodes', (req, res) => {
     let db = new Database(config.databaseName);
-    const stmt = db.prepare('SELECT * FROM Episodes');
+    const stmt = db.prepare(`SELECT 
+	Episodes.*, 
+	avg(Ratings.Rating) as Average 
+FROM Episodes 
+LEFT JOIN Ratings on Ratings.Episode_Id = Episodes.ID 
+GROUP by Episodes.ID;`);
     const episodeData = stmt.all();
     res.send(JSON.stringify(episodeData));
 })

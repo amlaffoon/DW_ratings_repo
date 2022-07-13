@@ -46,7 +46,11 @@ function updatePage(episodes) {
 
     let episodesTable = document.getElementById("episodes");
 
-    episodesTable.innerHTML = episodeElements;
+    episodesTable.innerHTML = `<th>Title</th>
+    <th>Series</th>
+    <th>Doctor</th>
+    <th>Rating</th>` +
+        episodeElements;
 
     //then append a new <div> for interactivity/modal OR a function that does the same
 

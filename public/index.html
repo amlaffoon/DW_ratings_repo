@@ -13,30 +13,67 @@
     <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>DW</title>
+    <title>Matrix of Time</title>
 </head>
 
 <body>
+
+    <nav id="top" class="tabs">
+        <ul>
+            <li>
+                <a href="#table">Episodes</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+        </ul>
+    </nav>
+
     <main class="container">
-        <h1 class="title">The Matrix</h1>
+        <h1 class="title">Matrix of Time</h1>
 
         <div class="field has-addons">
             <div class="control">
                 <input class="input" type="search" id="search-content" name="q" placeholder="Search"
                     oninput="searchPage(this)">
             </div>
+
             <!-- <div class="control">
                 <a class="button is-info">
                     Search
                 </a>
             </div> -->
         </div>
-
+        <div class="content">
+            <p>Click on an episode to leave a rating</p>
+        </div>
         <table class="table" id="episodes">
 
         </table>
 
+        <div class="content">
+            <p class="box">
+                <a href="">Doctor Who</a> is a British sci-fi TV program that first aired in 1963 and was rebooted in
+                2005.
+                The Doctor, a Time Lord from the planet Gallifrey, travels through time and space with their friends and
+                companions in their time machine the TARDIS.
+            </p>
+            <!--insert about section here that explains what doctor who and the matrix are-->
+        </div>
+
+        <div id="about" class="content">
+            <p class="box">
+                <a href="">The Matrix</a> (or The Matrix of Time) is a Time Lord supercomputer that contains information
+                on
+                almost all known history in the universe, which allows prediction of future events.
+            </p>
+        </div>
+
+        <div>
+            <a href="#top">Back to Top</a>
+        </div>
     </main>
+
     <!-- <button onclick="toggleModal()">Toggle</button> -->
     <div id="modal" class="modal">
         <!--function to switch on/off is-active class-->
@@ -69,11 +106,13 @@
                 <button onclick="toggleModal()" class="button">Cancel</button>
             </footer>
         </div>
+
     </div>
+
     <script src="app.js"></script>
 </body>
 <footer class="footer">
-    Anna Marie Laffoon 1994
+    Anna Marie Laffoon
 </footer>
 
 </html>

@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3001;
 const path = require('path');
 const Database = require('better-sqlite3');
 const initializeDatabase = require('./db/initializeDatabase');

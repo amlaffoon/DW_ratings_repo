@@ -8,8 +8,10 @@ Additional to do:
 5. change text color to white X
 6. Add logo to title/hero X
 
+
 7. Fear Her seems to appear twice on the table - need to fix the SQL?
 8. Add breakpoint for desktop so that About boxes are side by side instead of stacked
+9. DISPLAY COMMENTS
 
 Features:
 

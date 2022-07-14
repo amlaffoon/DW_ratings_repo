@@ -17,74 +17,94 @@
 </head>
 
 <body>
-
+    <!--NAVBAR-->
     <nav id="top" class="tabs">
         <ul>
             <li>
-                <a href="#table">Episodes</a>
+                <a class="has-text-white" href="#table">Episodes</a>
             </li>
             <li>
-                <a href="#about">About</a>
+                <a class="has-text-white" href="#about">About</a>
             </li>
         </ul>
     </nav>
+    <!--ENDNAVBAR-->
 
     <main class="container">
-        <h1 class="title">Matrix of Time</h1>
 
+        <section class="hero is-small">
+            <div class="hero-body">
+                <img src="/header/matrix540transparent.png" alt="matrix-time-logo">
+                <!-- <h1 class="title has-text-white">Matrix of Time</h1> -->
+
+            </div>
+        </section>
+
+        <!--SEARCH-->
         <div class="field has-addons">
             <div class="control">
-                <input class="input" type="search" id="search-content" name="q" placeholder="Search"
+                <input name="searchbar" class="input" type="search" id="search-content" name="q" placeholder="Search"
                     oninput="searchPage(this)">
             </div>
+        </div>
+        <!--ENDSEARCH-->
 
-            <!-- <div class="control">
-                <a class="button is-info">
-                    Search
-                </a>
-            </div> -->
-        </div>
         <div class="content">
-            <p>Click on an episode to leave a rating</p>
+            <p class="has-text-white">Click on an episode to leave a rating</p>
         </div>
+
+        <!--TABLE-->
         <table class="table" id="episodes">
-
         </table>
+        <!--ENDTABLE-->
 
-        <div class="content">
-            <p class="box">
-                <a href="">Doctor Who</a> is a British sci-fi TV program that first aired in 1963 and was rebooted in
-                2005.
-                The Doctor, a Time Lord from the planet Gallifrey, travels through time and space with their friends and
-                companions in their time machine the TARDIS.
-            </p>
-            <!--insert about section here that explains what doctor who and the matrix are-->
-        </div>
+        <!--ABOUT-->
+        <section id="about">
+            <div class="content">
+                <p class="box">
+                    <a href="https://en.wikipedia.org/wiki/Doctor_Who">Doctor Who</a> is a British sci-fi TV program
+                    that
+                    first aired in 1963 and was rebooted in
+                    2005.
+                    The Doctor, a Time Lord from the planet Gallifrey, travels through time and space in their time
+                    machine,
+                    the TARDIS, accompanied by various friends and companions.
+                </p>
+            </div>
 
-        <div id="about" class="content">
-            <p class="box">
-                <a href="">The Matrix</a> (or The Matrix of Time) is a Time Lord supercomputer that contains information
-                on
-                almost all known history in the universe, which allows prediction of future events.
-            </p>
-        </div>
+            <div class="content">
+                <p class="box">
+                    <a href="https://en-academic.com/dic.nsf/enwiki/451418">The Matrix</a> (or The Matrix of Time) is a
+                    Time
+                    Lord supercomputer that contains information
+                    on
+                    almost all known history in the universe, which allows prediction of future events.
+                </p>
+            </div>
+        </section>
+        <!--ENDABOUT-->
 
         <div>
             <a href="#top">Back to Top</a>
         </div>
+
     </main>
 
     <!-- <button onclick="toggleModal()">Toggle</button> -->
     <div id="modal" class="modal">
         <!--function to switch on/off is-active class-->
-        <div class="modal-background"></div>
+        <div class="modal-background">
+
+        </div>
         <div class="modal-card">
+            <!--MODALTITLE-->
             <header class="modal-card-head">
                 <p id="modal-title" class="modal-card-title">Modal title</p>
                 <button onclick="toggleModal()" class="delete" aria-label="close"></button>
             </header>
 
             <section class="modal-card-body">
+                <!--INPUTCOMMENT-->
                 <div class="field">
                     <div class="control">
                         <input class="input is-link" id="comment" placeholder="Comment" type="text">
@@ -92,6 +112,7 @@
                 </div>
 
                 <div class="field">
+                    <!--INPUTRATING-->
                     <div class="control">
                         <input class="input is-link" id="rating" type="number" placeholder="Rating" min="1" max="10">
                     </div>
@@ -101,17 +122,22 @@
 
                 <!-- Content ... -->
             </section>
+
             <footer class="modal-card-foot">
+                <!--SAVECLOSEBUTTONS-->
                 <button onclick="submitForm()" class="button is-success">Save changes</button>
                 <button onclick="toggleModal()" class="button">Cancel</button>
             </footer>
+
         </div>
 
     </div>
 
     <script src="app.js"></script>
+
 </body>
-<footer class="footer">
+
+<footer class="footer has-background-black">
     Anna Marie Laffoon
 </footer>
 

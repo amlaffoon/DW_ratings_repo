@@ -2,7 +2,7 @@ let allEpisodes = [];
 
 fetch('/episodes')
     .then((res) => res.json())
-    .then(updatePage)
+    .then(episodes => updatePage(episodes))
 
 function updatePage(episodes) {
     allEpisodes = episodes;
@@ -82,7 +82,15 @@ async function submitForm() {
 
     let responseBody = await response.text()
 
+    document.getElementById("comment").value = "";
+    document.getElementById("rating").value = "";
+
     toggleModal();
+
+    let episodeResponse = await fetch("/episodes");
+
+    let episodes = await episodeResponse.json();
+    updatePage(episodes);
 }
 
 function openEpisodeForm(episodeID) {

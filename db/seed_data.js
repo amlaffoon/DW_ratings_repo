@@ -24,7 +24,6 @@ const episodes = [
     { Title: "The Satan Pit", Series: 2, Doctor: "Tenth" },
     { Title: "Love and Monsters", Series: 2, Doctor: "Tenth" },
     { Title: "Fear Her", Series: 2, Doctor: "Tenth" },
-    { Title: "Fear Her", Series: 2, Doctor: "Tenth" },
     { Title: "Army of Ghosts", Series: 2, Doctor: "Tenth" },
     { Title: "Doomsday", Series: 2, Doctor: "Tenth" },
     { Title: "The Runaway Bride", Series: 3, Doctor: "Tenth" },

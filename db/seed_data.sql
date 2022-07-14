@@ -24,7 +24,6 @@ INSERT INTO Episodes (Title, Series, Doctor) VALUES
 ("The Satan Pit", 2, "Tenth"),
 ("Love and Monsters", 2, "Tenth"),
 ("Fear Her", 2, "Tenth"),
-("Fear Her", 2, "Tenth"),
 ("Army of Ghosts", 2, "Tenth"),
 ("Doomsday", 2, "Tenth"),
 ("The Runaway Bride", 3, "Tenth"),

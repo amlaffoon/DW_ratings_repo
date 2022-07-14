@@ -1,13 +1,12 @@
 body {
     background-image: url(https://cdn.pixabay.com/photo/2017/09/29/01/31/abstract-2797576_1280.jpg);
+    background-color: #130e22;
 }
 
-h1 {
-    color: #f5ead5 !important;
-}
 
 main {
-    background-color: #00203c;
+    background: rgb(1, 0, 24);
+    background: radial-gradient(circle, rgba(1, 0, 24, 1) 0%, rgba(0, 32, 60, 1) 49%, rgba(1, 0, 24, 1) 100%);
 }
 
 .container {
@@ -19,21 +18,24 @@ main {
     max-width: 80%;
 }
 
-/* .box {
+.about {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80%;
-} */
+}
 
 .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #130e22;
 }
 
 .is-hidden {
     display: none;
+}
+
+@media only screen and (min-width: 800px) {
+    .about {
+        flex-direction: row;
+    }
 }

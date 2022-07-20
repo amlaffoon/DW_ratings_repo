@@ -28,7 +28,6 @@ GROUP by Episodes.ID;`);
 
 app.post('/ratings', (req, res) => {
     let db = new Database(config.databaseName);
-    //variables to represent the values for sql insert
     if (req.body.rating < 1 || req.body.rating > 10) {
         res.send("Rating must be between 1 and 10");
     }
@@ -37,17 +36,31 @@ app.post('/ratings', (req, res) => {
         stmt.run(req.body.rating, req.body.comment, req.body.episodeId);
         res.send("saved review");
     }
-    // const info = stmt.run(req.body.)//last property is whatever is in the body of the request
-    //execute sql insert
 })
 
 app.get('/ratings', (req, res) => {
     let db = new Database(config.databaseName);
-    const stmt = db.prepare('SELECT * FROM Ratings');
-    const ratingsData = stmt.all();
-    res.send(JSON.stringify(ratingsData));
-})
+    const stmt = db.prepare(`SELECT Episodes.Title, Comment, Rating
+    FROM Ratings
+    INNER JOIN Episodes on Episodes.Id = Ratings.Episode_Id
+    ORDER by Ratings.Id DESC
+    LIMIT 20;
+    `);
+    const commentData = stmt.all();
+    res.send(JSON.stringify(commentData));
+}) //use for comments?
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 })
+
+
+
+
+//for comments:
+
+// SELECT episodes.Title, Comment, Rating
+// FROM Ratings
+// INNER JOIN Episodes on Episodes.Id = Ratings.Episode_Id
+// ORDER by Ratings.Id DESC
+// LIMIT 20;

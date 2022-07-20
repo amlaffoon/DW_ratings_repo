@@ -18,5 +18,5 @@ Features:
 
 How to Run:
 
--"npm start" or "npm server.js" 
+-"npm start"
 -if your machine does not have the database file saved on it, the seed script will run and create the database for you.

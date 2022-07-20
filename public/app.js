@@ -52,8 +52,6 @@ function updatePage(episodes) {
     <th>Rating</th>` +
         episodeElements;
 
-    //then append a new <div> for interactivity/modal OR a function that does the same
-
 }
 
 function toggleModal() {
@@ -114,3 +112,24 @@ function searchPage(input) {
         } else node.classList.add("is-hidden");
     }
 }
+async function loadComments() {
+    let commentResponse = await fetch("/ratings");
+    const comments = await commentResponse.json();
+    const commentDisplay = document.getElementById('commentsection');
+
+    displayComments(commentDisplay, comments);
+}
+
+
+loadComments()
+
+function displayComments(commentDisplay, comments) {
+    comments.forEach((comment) => {
+        const element = document.createElement('span');
+        element.classList.add('comment');
+        element.classList.add('media');
+        element.innerText = `Comment on ${comment.Title}: "${comment.Comment}" Rating: ${comment.Rating}`;
+        commentDisplay.appendChild(element);
+    });
+}
+

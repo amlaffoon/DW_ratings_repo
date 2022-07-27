@@ -18,16 +18,16 @@
 
 <body>
     <!--NAVBAR-->
-    <nav id="top" class="tabs">
+    <nav id="top" class="navbar is-fixed-top tabs is-transparent">
         <ul>
             <li>
-                <a class="has-text-white" href="#episodes">Episodes</a>
+                <a href="#episodes">Episodes</a>
             </li>
             <li>
-                <a class="has-text-white" href="#about">About</a>
+                <a href="#about-section">About</a>
             </li>
             <li>
-                <a class="has-text-white" href="#commentsection">Comments</a>
+                <a href="#comment-section">Comments</a>
             </li>
         </ul>
     </nav>
@@ -62,6 +62,7 @@
         <!--ENDTABLE-->
 
         <!--ABOUT-->
+        <div id="about-section"></div>
         <section id="about">
             <div class="content">
                 <p class="box">
@@ -91,15 +92,15 @@
         <!--COMMENTS-->
         <section class="content">
             <h3 class="has-text-white">Recent Comments</h3>
-            <div id="commentsection" class="box">
+            <div id="comment-section" class="box">
 
             </div>
         </section>
         <!--ENDABOUT-->
 
-        <div>
+        <!-- <div>
             <a href="#top">Back to Top</a>
-        </div>
+        </div> -->
 
     </main>
 
@@ -120,14 +121,15 @@
                 <!--INPUTCOMMENT-->
                 <div class="field">
                     <div class="control">
-                        <input class="input is-link" id="comment" placeholder="Comment" type="text">
+                        <input class="input is-link" id="comment" placeholder="Comment" type="text" maxlength="500">
                     </div>
                 </div>
 
                 <div class="field">
                     <!--INPUTRATING-->
                     <div class="control">
-                        <input class="input is-link" id="rating" type="number" placeholder="Rating" min="1" max="10">
+                        <input class="input is-link" id="rating" type="number" placeholder="Rating (1-10)" min="1"
+                            max="10">
                     </div>
                 </div>
 

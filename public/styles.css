@@ -22,7 +22,7 @@ td {
     cursor: pointer;
 }
 
-.about {
+#about {
     display: flex;
     flex-direction: column;
 }
@@ -39,7 +39,7 @@ td {
 }
 
 @media only screen and (min-width: 800px) {
-    .about {
+    #about {
         flex-direction: row;
     }
 }

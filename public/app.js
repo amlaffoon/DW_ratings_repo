@@ -115,7 +115,7 @@ function searchPage(input) {
 async function loadComments() {
     let commentResponse = await fetch("/ratings");
     const comments = await commentResponse.json();
-    const commentDisplay = document.getElementById('commentsection');
+    const commentDisplay = document.getElementById('comment-section');
 
     displayComments(commentDisplay, comments);
 }

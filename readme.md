@@ -2,21 +2,28 @@ Displays a table of Doctor Who episodes since 2005, with title, season, and feat
 
 Additional to do:
 
-1. "Fear Her" seems to appear twice on the table - need to fix the SQL?
-2. Add breakpoint for desktop so that About boxes are side by side instead of stacked
-3. Round the ratings to 2 decimal places...lol
+1. Round the ratings to 2 decimal places...lol
+2. Conditional CSS for rating input if outside of parameters (1-10) calculate remaining characters in comment field
+3. adjust sizing/proportion of sections: table, comments, about
+4. Add padding to About sections
+key up event listener on comment section to count number of keys pressed - gget value of input, get length, subtract from max. show difference in html. add a check to disable submit if number is negative. add if statement to backend. don't insert if length exceeds
 
 Features:
 
--Retrieve data from an external API and display data in your app (such as with fetch() or with AJAX)
+-Retrieves data from an API and displays data in the app (such as with fetch())
 
--Post to an external API and show that it has saved/persisted
+-Posts to an API and shows that it has saved/persisted
 
--Create a form and save the values (on click of Submit button) to an external file 
+-Create a form and save the values (on click of Submit button) to an external file (saved to DWR_db SQLite database)
 
 -Create a web server with at least one route and connect to it from your application using ExpressJS
 
+-Create an array, populate it with multiple values, retrieve at least one value, and use or display it in your application 
+
 How to Run:
 
--"npm start"
+-"npm install" to install dependencies
+-"npm start" to run the project
 -if your machine does not have the database file saved on it, the seed script will run and create the database for you.
+
+-hosted on Render: https://dwreviews.onrender.com/
